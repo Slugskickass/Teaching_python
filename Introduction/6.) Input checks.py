@@ -1,8 +1,9 @@
-data = input("Please type your input ")
+data_in = input("Please type your input ")     # What happens if you inout a number, what about a letter
 
-dataa = float(data)
+data_as_a_float = float(data_in)
 
-datab = str(data)
+datab_as_a_string = str(data_in)
 
-print(dataa)
-print(datab)
+print(data_as_a_float)
+
+print(datab_as_a_string)

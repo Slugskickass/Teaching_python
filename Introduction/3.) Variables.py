@@ -26,8 +26,16 @@ my_list = [my_complex, my_name, my_int, my_float]
 print(my_list)
 my_list[3] = 'Testing'
 print(my_list)
+my_list.append("last one")
+print(my_list)
 
 
 my_tuple = (my_complex, my_name, my_int, my_float)
 print(my_tuple)
 
+my_dictionary = { 'Name': 'Ashley', 'Position': 'Researcher', 'Employee Number': 101}
+print(my_dictionary)
+X = my_dictionary['Name']
+print(X)
+print(my_dictionary.keys())
+print(my_dictionary.values())

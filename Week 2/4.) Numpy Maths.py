@@ -24,3 +24,7 @@ print()
 temp = array_one > array_two
 print(temp)
 print()
+
+print('Average ', np.average(array_two))
+print('Max ', np.max(array_two))
+print('Max along an axis', np.max(array_two, axis=0))

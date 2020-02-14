@@ -6,3 +6,6 @@ out = np.matmul(array_one, vector_one)
 print(out)
 
 
+print('Diagonal ', np.diag(array_one))
+
+

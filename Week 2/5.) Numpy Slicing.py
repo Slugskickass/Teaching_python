@@ -15,3 +15,8 @@ x = [0, 2]
 print(array_one[x,:])       # Print the top and bottom rows
 
 
+array_two = np.random.rand(10,10)
+print(array_two)
+print()
+print(array_two[3:6, 7:9])
+print()

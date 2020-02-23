@@ -11,5 +11,7 @@ new_array = np.reshape(new_array, [1, 9])
 print(new_array)
 
 
+print(new_array.reshape([3, 3]))
+
 #Transpose the array
 print(array_one.T)

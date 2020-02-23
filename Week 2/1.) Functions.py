@@ -12,6 +12,6 @@ def my_function_two(number_in_one = 100):       # Again defined by the def comma
             flag = False
     return(number_in_one, flag)                 # We also return a value back to the original program.
 
-myfunction_one(10)
-print('Is the number prime, ', my_function_two(97))
+#myfunction_one(10)
+#print('Is the number prime, ', my_function_two(97))
 print('Is the number prime, ', my_function_two())

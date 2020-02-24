@@ -9,11 +9,15 @@ data = np.load('my_saved_data.npy')
 print(data)
 
 # we can load data from a file
-# This works well becasue it is clever enough to ckip the headers
+# This works well becasue it is clever enough to skip the headers
 data_one = np.genfromtxt('Data/Apollo11.csv', delimiter=',')
 #This does not know how to skip rows so we have to tell it to skiprows
-data_two = np.loadtxt('Data/Apollo11.csv', delimiter=',', skiprows=2)
+data_two = np.loadtxt('Data/Apollo11.csv', delimiter=',', skiprows=1)
 
+print('The first line of the data')
+print(data_one[0, 0:2])
+print('The first line of the data')
+print(data_two[0, 0:2])
 #another useful function is this
 import os
 print(os.listdir())

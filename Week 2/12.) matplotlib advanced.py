@@ -11,9 +11,9 @@ data_two = np.loadtxt('../Week 2/Data/stock_px.csv', delimiter=',', skiprows=1, 
 np.save('../Week 2/Data/stock_date', data_two)
 np.save('../Week 2/Data/stock_price', data_one)
 # Now we can plot it
-plt.plot(data_two, data_one[:, 0], 'k', label='Apple')
-plt.plot(data_two, data_one[:, 1], 'g', label='Microsoft')
-plt.plot(data_two, data_one[:, 2], 'b', label='Exxon Mobile')
-plt.plot(data_two, data_one[:, 3], 'm', label='SP 500')
+plt.plot(data_two, data_one[:, 0], 'k', label='Apple')                  # Note the colour K
+plt.plot(data_two, data_one[:, 1], 'g', label='Microsoft')              # Note the colour g
+plt.plot(data_two, data_one[:, 2], 'b', label='Exxon Mobile')           # Note the colour b
+plt.plot(data_two[0:-1], data_one[:, 3], 'm', label='SP 500')           # Note the colour m
 plt.legend(loc='upper left')
 plt.show()

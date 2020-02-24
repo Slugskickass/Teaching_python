@@ -13,10 +13,15 @@ print(array_one[1, :], '\n')       # Print the centre row
 
 print('The : 1 element is', '\n')
 print(array_one[:, 1])       # Print the centre column
+# Note the : on its own is short for all the indices
+# The term A:B are the indices between A and B
+# The last item in an array can be addressed as -1
 
 x = [0, 2]
 print(array_one[x, :])       # Print the top and bottom rows
 
+y = [[0, 0], [1, 2], [2, 2]]
+print(array_one[y])
 
 array_two = np.random.rand(10, 10)
 print(array_two)

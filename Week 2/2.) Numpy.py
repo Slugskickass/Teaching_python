@@ -1,3 +1,8 @@
+# The line below loads the numpy array in to the memory
 import numpy as np
-help(np)
-#dir(np)h
+
+#print(help(np))
+# The line below prints all the functions available in the
+print(dir(np))
+
+print(np.sqrt(101))

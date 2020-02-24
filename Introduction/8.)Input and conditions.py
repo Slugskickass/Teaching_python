@@ -29,3 +29,10 @@ else:
 #         print("The first is bigger")
 #     else:
 #         print("The second is bigger")
+
+input_var = input('Input')
+input_var = str(input_var)
+if (isinstance(input_var, int)):
+    print('no')
+else:
+    print('yes')

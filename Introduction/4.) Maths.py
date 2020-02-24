@@ -1,3 +1,4 @@
+# Some basic maths
 # Raising to the power
 base_number = 2
 power = 10

@@ -5,14 +5,14 @@ Z = 30
 if X < Y and Y < Z:
     print("hello")
 else:
-    print('Godbye')
+    print('Goodbye')
 print('finished')
 
 X = 11
 Y = 12
 
 if X < Y or Y > X:
-    print('they are differnt')
+    print('they are different')
 else:
     print('They are the same')
 print('Finished')

@@ -6,7 +6,7 @@ flight_data = pd.read_csv('Data/spacex_launch_data.csv')
 print(flight_data.columns)
 print(flight_data['Flight Number'], flight_data['Payload'], flight_data['Customer'])
 
-
+print(flight_data['Payload'][20])
 
 kilo_data = []
 for I in range(10):

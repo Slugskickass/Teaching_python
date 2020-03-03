@@ -2,6 +2,13 @@ import numpy as np
 import scipy
 import matplotlib.pyplot as plt
 
+import time
+
+start = time.time()
+
+
+
+
 my_data = np.load('My_noisy_data.npy')                      # Load the data
 x_data = my_data[:, 0]                                      # Seperate the data in to X and Y
 y_data = my_data[:, 1]
@@ -18,13 +25,22 @@ print(np.shape(y_data))                                     # Just checking the 
 # Here we add another column of data where the added column contains just ones
 # This is because we want two numbers out the gradient and the intercept, as we are using a matric
 # Transform we need to supply the algorithm with a 2D array
-A = np.vstack([x_data, np.ones(len(x_data))])  # Build design matrix
+A = np.vstack([np.ones(len(x_data)), x_data]).T # Build design matrix
 print(np.shape(A))
 
-# Here we call the function np.linalg.lstsq from numpy (we are after all just doing a matrix transform)
 # See the notes for more explanation.
-m, c = np.linalg.lstsq(A.T, y_data.T, rcond=None)[0]
+temp = np.matmul(A.T, A)
+temp_inv = np.linalg.inv(temp)
 
-plt.plot(x_data, y_data, 'o')
-plt.plot(x_data, c + (m * x_data))
-plt.show()
+temp2 = np.matmul(A.T, y_data)
+
+final = np.matmul(temp_inv, temp2)
+print(final)
+
+# end = time.time()
+# print(end-start)
+#
+# plt.plot(x_data, y_data, 'o')
+# plt.plot(x_data, c + (m * x_data))
+# plt.show()
+# print(m, c)

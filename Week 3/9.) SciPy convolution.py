@@ -15,7 +15,7 @@ img.close()
 # This will detect edges in the X direction
 sobel = np.asarray([[1, 0, -1], [2, 0, -2], [1, 0, -1]])
 blur = np.asarray([[1/9, 1/9, 1/9], [1/9, 1/9, 1/9], [1/9, 1/9, 1/9]])
-bigger_blur = np.ones((25, 25))/25
+bigger_blur = np.ones((25, 25))/(25*25)
 line_finder = np.asarray([[-1, 2, -1], [-1, 2, -1], [-1, 2, -1]])
 
 operations = [sobel, blur, bigger_blur, line_finder]

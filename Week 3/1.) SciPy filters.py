@@ -8,7 +8,8 @@ my_data[30:60] = 1                                  # Set the middle section to 
 plt.plot(my_data)                                   # Show the data
 plt.show()
 
-my_data_diff = np.diff(my_data)                     # Differentiate the data
+
+my_data_diff = np.diff(my_data, 1)                  # Differentiate the data
 plt.plot(my_data_diff)                              # Show the data
 plt.show()
 

@@ -39,18 +39,18 @@ plt.title('Differentiated smoothed  Noisy Data')
 plt.show()
 
 re_smoothed_data_diff = savgol_filter(smoothed_data_diff, 11, 1)        # Differentiate the data
-plt.plot(re_smoothed_data_diff)                         # Show the data
+plt.plot(re_smoothed_data_diff)                                         # Show the data
 plt.title('Differentiated Smoothed Differentiated Noisy Data')
 plt.show()
 
 
 #Uncomment this to show the effect of multiple window lengths
 
-# for I in range(3,21,2):
-#     re_smoothed_data_diff = savgol_filter(smoothed_data_diff, I, 1)        # Differentiate the data
-#     plt.plot(re_smoothed_data_diff)                         # Show the data
-# plt.title('Multiple smoothing')
-# plt.show()
+for I in range(3,21,2):
+    re_smoothed_data_diff = savgol_filter(smoothed_data_diff, I, 1)        # Differentiate the data
+    plt.plot(re_smoothed_data_diff)                         # Show the data
+plt.title('Multiple smoothing')
+plt.show()
 
 
 # More can be found at

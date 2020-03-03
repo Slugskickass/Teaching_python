@@ -7,7 +7,7 @@ from scipy.optimize import curve_fit
 # NOTE
 
 def build_gaussian(x_data, offset, xo, sigma, amplitude):
-    y_val = offset + amplitude *np.exp((-1 * (xo-x_data)**2)/sigma**2)
+    y_val = offset + amplitude * np.exp((-1 * (xo-x_data)**2)/sigma**2)
     return(y_val)
 
 

@@ -12,8 +12,8 @@ def build_gaussian(x_data, offset, xo, sigma, amplitude):
 
 
 # Here I build the data
-x_data = np.linspace(0,100,100)
-y_data = np.random.normal(0, 5, len(x_data)) + build_gaussian(x_data, 1, 50, 4, 100)
+x_data = np.linspace(0, 100, 100)
+y_data = np.random.normal(0, 5, len(x_data)) + build_gaussian(x_data, 1, 50, 8, 100)
 plt.plot(x_data, y_data, 'o')
 
 # Here I make some guesses
@@ -22,11 +22,13 @@ plt.plot(x_data, y_data, 'o')
 # The I can easily guess the sigma so I set my guess to 1, why not
 # The I say the amplitude is the maximum value of the data
 # Very simple guesses
+
 guess = [np.min(y_data), np.argmax(y_data), 1, np.max(y_data)]
 
 # Then I give the curve fit command the fitting function I want, the data and my guesses
 popt, pcov = curve_fit(build_gaussian, x_data, y_data, p0=np.asarray(guess))
 
+print(popt)
 fitted_data = build_gaussian(x_data, popt[0], popt[1], popt[2], popt[3])
 
 plt.plot(x_data, fitted_data)

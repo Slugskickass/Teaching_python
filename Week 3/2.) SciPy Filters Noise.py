@@ -10,7 +10,7 @@ my_data[30:60] = 1                                  # Set the middle section to 
 np.random.seed(0)                                   # now we are going to add random noise
                                                     # The seed command allows us set a seed for the random numbers
                                                     # Generated later, this way we can always use the same random numbers
-noise = np.random.normal(0, 0.3, size=np.shape(my_data))
+noise = np.random.normal(0, 0.03, size=np.shape(my_data))
                                                     # np.random.normal gives us a normal distrobution of numbers
                                                     # around 0 with a std dev of 0.3.  We ask for the same number of
                                                     # numbers as in my_data
@@ -54,4 +54,4 @@ plt.show()
 
 
 # More can be found at
-# https://docs.scipy.org/doc/scipy/reference/signal.html
+#https://docs.scipy.org/doc/scipy/reference/signal.html

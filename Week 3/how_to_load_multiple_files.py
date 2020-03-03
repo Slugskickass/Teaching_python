@@ -14,7 +14,7 @@ def get_file_list(dir):
 
 
 def snowflake(file_name):
-    data_one = np.genfromtxt(file_name, delimiter=',')
+    data_one = np.genfromtxt(file_name, delimiter = ',')
     x_data = data_one[:, 0]
     y_data = data_one[:, 1]
     slope, intercept, r_value, p_value, std_err = stats.linregress(x_data, y_data)

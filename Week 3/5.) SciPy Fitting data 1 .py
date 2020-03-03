@@ -37,10 +37,10 @@ temp2 = np.matmul(A.T, y_data)
 final = np.matmul(temp_inv, temp2)
 print(final)
 
-# end = time.time()
-# print(end-start)
-#
-# plt.plot(x_data, y_data, 'o')
-# plt.plot(x_data, c + (m * x_data))
-# plt.show()
-# print(m, c)
+end = time.time()
+print(end-start)
+
+plt.plot(x_data, y_data, 'o')
+plt.plot(x_data, final[0] + (final[1] * x_data))
+plt.show()
+print(final[0], final[1])

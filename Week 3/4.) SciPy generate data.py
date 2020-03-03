@@ -1,5 +1,4 @@
 import numpy as np
-import scipy
 import matplotlib.pyplot as plt
 
 def generate_data(gradient, offset, start, stop, noise, number_of_points):
@@ -10,12 +9,13 @@ def generate_data(gradient, offset, start, stop, noise, number_of_points):
     return x, final_data                                                # return the x and y values
 
 # Generate some data
-gradient = 2
+gradient = 3
 offset = 3
-noise_level = 4
-number_of_points = 100
+noise_level = 2
+number_of_points = 1000
 start = 0
 stop = 10
+
 my_x_data, my_y_data = generate_data(gradient, offset, start, stop, noise_level, number_of_points)
 
 

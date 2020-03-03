@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import distancehelper as dh
 
 virus_data = pd.read_csv('Data/covid_19_clean_complete.csv')
 print(virus_data.columns)
@@ -23,3 +24,16 @@ for index, date in enumerate(date_list):
 plt.plot(Total)
 plt.show()
 
+sheffield = (53.3811, 1.4701)
+temp1 = np.asarray(virus_data['Lat'])
+temp2 = np.asarray(virus_data['Long'])
+
+
+distances = np.zeros(len(temp2))
+for index in range(len(temp2)):
+    distances[index] = dh.haversine(sheffield, (temp1[index], temp2[index]))
+
+away_in_km = 300 * 1000
+
+position = np.where(distances < away_in_km)
+print(np.shape(position)[1])

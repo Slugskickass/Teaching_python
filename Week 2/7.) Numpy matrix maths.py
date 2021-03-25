@@ -1,13 +1,13 @@
 import numpy as np
-
+#
 array_one = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 vector_one = np.array([1, 2, 3])
-outa = np.matmul(array_one, vector_one)     # The matrix multiplication
-print(outa)
-
-
-print('Diagonal ', np.diag(array_one))      # Diagonalise a matrix
-print(array_one.T)
+# outa = np.matmul(array_one, vector_one)     # The matrix multiplication
+# print(outa)
+#
+#
+# print('Diagonal ', np.diag(array_one))      # Diagonalise a matrix
+# print(array_one.T)
 
 array_one = np.array([[1, 1], [1, 1]])
 array_two = np.array([[2, 0], [0, 2]])

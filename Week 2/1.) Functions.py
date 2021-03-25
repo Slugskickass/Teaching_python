@@ -16,15 +16,18 @@ def my_function_two(number_in_one = 100):               # Again defined by the d
 
 # The lines above here do nothing unless the functions are called
 # The line below calls myfunction_one and passes it the number 10
-myfunction_one(10)
+#myfunction_one(14)
 
-# The next two linec call my_function_two.
-# The first call the function passing the number 97
+# The next two lines call my_function_two.
+# The first call the function passing the number 97tens
+kittens, prime =my_function_two(100000050569)
+print(kittens)
+print(prime)
 print('Is the number prime, ', my_function_two(97))
 # If we dont pass a number then normally the function would fail, it would not know what to do.
 # However, because we defined the function as def my_function_two(number_in_one = 100): if
 # we dont pass a number then it defaults to 100
-print('Is the number prime, ', my_function_two())
+#print('Is the number prime, ', my_function_two())
 
 
 # This code allows you to time the amount of time taken for the function to run
@@ -33,3 +36,6 @@ print('Is the number prime, ', my_function_two())
 # print('Is the number prime, ', my_function_two(100000050569))
 # end = time.time()
 # print(end-start)
+
+import numpy as np
+my_array = np.asarray([1,2,3,4,5,6])

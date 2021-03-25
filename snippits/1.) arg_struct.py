@@ -1,3 +1,6 @@
 import sys
-for I in range(len(sys.argv)):
-    print(sys.argv[I])
+import numpy as np
+
+first_number = np.float(sys.argv[1])
+second_number = np.float(sys.argv[2])
+print(first_number + second_number)

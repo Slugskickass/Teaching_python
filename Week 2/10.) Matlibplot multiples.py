@@ -25,9 +25,9 @@ SP_data.tick_params(axis='x', rotation=90)                      # I can change t
 Exxon_data.tick_params(axis='x', rotation=45)
 Microsoft_data.tick_params(axis='x', rotation=45)
 
-apple_data.set_title('Apple)')                                  # I can change the title for each subplot.
-Microsoft_data.set_title('Microsoft)')
-Exxon_data.set_title('Exxon)')
+apple_data.set_title('Apple')                                  # I can change the title for each subplot.
+Microsoft_data.set_title('Microsoft')
+Exxon_data.set_title('Exxon')
 SP_data.set_title('SP 500')
 plt.show()                                                      # This is important it presents the plot. Once this command
                                                                 # Is issued you can change the plots.

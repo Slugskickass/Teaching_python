@@ -3,6 +3,10 @@ from scipy import stats
 import time
 from multiprocessing import Pool
 
+
+#with get_context("spawn").Pool() as pool:
+
+
 def fitter(y_data):
     # Simple self contained fitting function, one input
     x_data = np.linspace(0, len(y_data), len(y_data))
@@ -12,7 +16,7 @@ def fitter(y_data):
 #Build the data, for a pool command we need to put all our data in a single block
 hold_data =[]
 number_points = 100
-number_runs = 10
+number_runs = 1000
 for position in range(number_runs):
     # This loop build a list of arrays to be fitted
     x_sent = np.linspace(0, number_points, number_points)

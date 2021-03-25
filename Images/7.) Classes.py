@@ -12,10 +12,14 @@ class masters(object):
 
 def main():
    outer = np.zeros((100, 110))
-   test_data = masters(outer)
-   print(test_data.data_size)
-   outer = test_data.transpose()
+   raj = masters(outer)
+   print(raj.data_size)
+   outer = raj.transpose()
    print(np.shape(outer))
+
+   outer = np.zeros((12, 12))
+   dylan = masters(outer)
+   print(dylan.data)
 
 if __name__ == "__main__":
     main()

@@ -19,7 +19,7 @@ slope, intercept, r_value, p_value, std_err = stats.linregress(x_data, y_data)
 end = time.time()
 print(end-start)
 
-plt.plot(x_data, y_data,'o')
+plt.plot(x_data, y_data, 'o')
 plt.plot(x_data, intercept + (slope * x_data))
 plt.show()
 print(intercept, slope)

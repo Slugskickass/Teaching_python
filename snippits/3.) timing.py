@@ -10,7 +10,7 @@ number = 100
 hold = np.zeros(number)
 for looper in range(number):
     start = time.time()
-    test = np.random.poisson(10,1000)
+    test = np.random.poisson(10, 1000)
     end = time.time()
     hold[looper] = end-start
 print(np.mean(hold))

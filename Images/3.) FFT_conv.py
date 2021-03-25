@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Generate a gaussian
-image_size = 100
+image_size = 200
 gaussian = np.zeros((image_size, image_size))
 amplitude = 1
 sigma = 3

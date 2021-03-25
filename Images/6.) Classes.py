@@ -12,6 +12,7 @@ def main():
     sammy = Shark()
     sammy.swim()
     sammy.be_awesome()
+    sammy.swim()
 
 if __name__ == "__main__":
     main()

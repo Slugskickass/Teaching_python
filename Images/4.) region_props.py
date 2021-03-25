@@ -42,7 +42,7 @@ positions2 = np.where(areas <= 40)
 positions = np.intersect1d(positions1, positions2)
 
 plt.imshow(label_image > 0)
-plt.plot(y, x, 'r*')
+plt.plot(y, x, 'r.')
 plt.plot(y[positions], x[positions], 'bo')
 
 plt.show()

@@ -6,6 +6,7 @@ from skimage.morphology import closing, square
 from skimage.filters import threshold_otsu
 from skimage.filters import difference_of_gaussians
 from skimage.measure import label, regionprops, regionprops_table
+from scipy.optimize import curve_fit
 
 def loadtiffs(file_name):
     img = Image.open(file_name)
@@ -46,3 +47,33 @@ def regionfilter(data, smallest=4, largest=35):
     positions = np.intersect1d(positions1, positions2)
 
     return np.asarray(xpos[positions]), np.asarray(ypos[positions])
+
+def filteredges(cut_size, x_pos, y_pos, maxx, maxy):
+    positions1 = np.where(x_pos >= cut_size + 1)
+    positions2 = np.where(x_pos <= maxx - 1 - cut_size)
+    positionsx = np.intersect1d(positions1, positions2)
+
+
+    positions3 = np.where(y_pos >= cut_size + 1)
+    positions4 = np.where(y_pos <= maxy - 1 - cut_size)
+    positiony = np.intersect1d(positions3, positions4)
+
+    positions = np.intersect1d(positionsx, positiony)
+    return x_pos[positions], y_pos[positions]
+
+def returnregions(current_frame, x_pos, y_pos, cut_size):
+    image_store = []
+    for current_position in range(np.size(x_pos)):
+        temp_X = np.int(np.floor(x_pos[current_position]))
+        temp_Y = np.int(np.floor(y_pos[current_position]))
+        image_store.append(current_frame[temp_Y-cut_size:temp_Y+cut_size+1, temp_X-cut_size:temp_X+cut_size+1])
+    return np.asarray(image_store)
+
+def gaussian(x, y, x0, y0, xalpha, yalpha, offset, A):
+    return offset + A * np.exp(-((x-x0)/xalpha)**2 - ((y-y0)/yalpha)**2)
+
+def _gaussian(M, *args):
+    x, y = M
+    arr = gaussian(x, y, *args)
+    return arr
+

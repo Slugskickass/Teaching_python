@@ -25,6 +25,8 @@ for frame_number in range(np.shape(data)[2]):
 
     main_image_store = np.append(main_image_store, temp_array, axis=0)
 
+    # Fit each block that has been cut out.
+
     # Store, event number, frame, x_pos_corr and y_pos_corr.
     # Fitted, X, Y, Xsigma, Ysigma, offset, and the ampltitude
 

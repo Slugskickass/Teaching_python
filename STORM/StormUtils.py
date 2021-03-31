@@ -66,7 +66,7 @@ def returnregions(current_frame, x_pos, y_pos, cut_size):
     for current_position in range(np.size(x_pos)):
         temp_X = np.int(np.floor(x_pos[current_position]))
         temp_Y = np.int(np.floor(y_pos[current_position]))
-        image_store.append(current_frame[temp_Y-cut_size:temp_Y+cut_size+1, temp_X-cut_size:temp_X+cut_size+1])
+        image_store.append(current_frame[temp_X-cut_size:temp_X+cut_size+1, temp_Y-cut_size:temp_Y+cut_size+1])
     return np.asarray(image_store)
 
 def gaussian(x, y, x0, y0, xalpha, yalpha, offset, A):

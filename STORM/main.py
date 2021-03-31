@@ -1,9 +1,9 @@
 import StormUtils as ST
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.optimize import curve_fit
 
-
-file_name = '/Volumes/Samsung_T3/sequencesmall.tif'
+file_name = 'sequence.tif'
 
 data = ST.loadtiffs(file_name)
 
@@ -21,7 +21,7 @@ for frame_number in range(np.shape(data)[2]):
 
     x_pos_corr, y_pos_corr = ST.filteredges(cut_size, x_pos, y_pos, np.shape(current_frame)[0], np.shape(current_frame)[1])
 
-    temp_array = ST.returnregions(current_frame, x_pos_corr, x_pos_corr, cut_size)
+    temp_array = ST.returnregions(current_frame, x_pos_corr, y_pos_corr, cut_size)
 
     main_image_store = np.append(main_image_store, temp_array, axis=0)
 
@@ -38,12 +38,18 @@ for frame_number in range(np.shape(data)[2]):
 plt.plot(np.asarray(allx_positions), np.asarray(ally_positions), 'r.')
 plt.show()
 
-event = 101
+eventnumber = 3200
+event = main_image_store[eventnumber,:,:]
+xmin, xmax, nx = 0, 10, 11
+ymin, ymax, ny = 0, 10, 11
+x = np.linspace(xmin, xmax, nx)
+y = np.linspace(ymin, ymax, ny)
+X, Y = np.meshgrid(x, y)
+xdata = np.vstack((X.ravel(), Y.ravel()))
 
-print(allx_positions[event])
-print(ally_positions[event])
-plt.imshow(main_image_store[event,:,:])
-plt.show()
+p0 = (5, 5, 2, 3, 398, 2322 - 398)
+popt, pcov = curve_fit(ST._gaussian, xdata, event.ravel(), p0)
+print(popt)
 
 
 

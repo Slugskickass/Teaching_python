@@ -11,9 +11,9 @@ y_data = np.asarray(events['Y_pos_major'] + events['Y_pos'])
 plt.plot(x_data, y_data, '.')
 plt.show()
 
-out = plt.hist2d(x_data, y_data, bins=200)[0]
-out = gaussian_filter(out, sigma=5)
-plt.imshow(out, cmap='gray',vmin=0, vmax=0.0001)
-plt.show()
+# out = plt.hist2d(x_data, y_data, bins=200)[0]
+# out = gaussian_filter(out, sigma=5)
+# plt.imshow(out, cmap='gray',vmin=0, vmax=0.0001)
+# plt.show()
 
 

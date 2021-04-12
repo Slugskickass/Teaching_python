@@ -8,6 +8,8 @@ import pandas as pd
 file_name = '/Users/ashleycadby/Data/sequence.tif'
 data = ST.loadtiffs(file_name)
 
+old_settings = np.seterr(all='ignore')
+
 allx_positions = 0
 ally_positions = 0
 cut_size = 5
@@ -29,7 +31,7 @@ for frame_number in range(np.shape(data)[2]):
     temp_array = ST.returnregions(current_frame, x_pos_corr, y_pos_corr, cut_size)
 
     for index, item in enumerate(temp_array):
-        p0 = (5, 5, 2, 2, np.min(item), item[5, 5])
+        p0 = (cut_size, cut_size, 2, 2, np.min(item), item[5, 5])
         try:
             popt, pcov = curve_fit(ST._gaussian, xdata, item.ravel(), p0, bounds=((1, 1, 1, 1, 300, 300), (11, 11, 5, 5, 1000, 3000)))
             df = pd.DataFrame([[event_number, frame_number, int(np.floor(x_pos_corr[index])), int(np.floor(y_pos_corr[index])), popt[0], popt[1], popt[2], popt[3], popt[4], popt[5]]], columns=columns)

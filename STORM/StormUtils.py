@@ -27,7 +27,8 @@ def filter_data(data, sigmas=1, sigmab=10):
 def regionfilter(data, smallest=4, largest=15):
     thresh = threshold_otsu(data)
     bw = closing(data > thresh)
-    label_image = label(bw, 8)
+    #label_image = label(bw, 8)
+    label_image = label(bw, connectivity=2)
 
     # These are the properties I am interested in
     properties = ['label', 'area', 'centroid', 'bbox']

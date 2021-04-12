@@ -24,7 +24,7 @@ def filter_data(data, sigmas=1, sigmab=10):
     output = difference_of_gaussians(data, sigmas, sigmab)
     return output
 
-def regionfilter(data, smallest=4, largest=35):
+def regionfilter(data, smallest=4, largest=15):
     thresh = threshold_otsu(data)
     bw = closing(data > thresh)
     label_image = label(bw, 8)
@@ -76,4 +76,13 @@ def _gaussian(M, *args):
     x, y = M
     arr = gaussian(x, y, *args)
     return arr
+
+def buildxfit():
+    xmin, xmax, nx = 0, 10, 11
+    ymin, ymax, ny = 0, 10, 11
+    x = np.linspace(xmin, xmax, nx)
+    y = np.linspace(ymin, ymax, ny)
+    X, Y = np.meshgrid(x, y)
+    xdata = np.vstack((X.ravel(), Y.ravel()))
+    return xdata
 

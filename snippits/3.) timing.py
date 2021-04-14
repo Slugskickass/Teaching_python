@@ -2,7 +2,7 @@ import time
 import numpy as np
 
 print('The time in seconds', time.time())
-print('The time converted to teal world', time.ctime())
+print('The time converted to real world', time.ctime())
 
 
 # Time a function

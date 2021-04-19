@@ -18,15 +18,16 @@ train_set = torchvision.datasets.FashionMNIST(
     ])
 )
 
-display_loader = torch.utils.data.DataLoader(train_set, batch_size=10)
+display_loader = torch.utils.data.DataLoader(train_set, batch_size=16)
 batch = next(iter(display_loader))
 images, labels = batch
+
 grid = torchvision.utils.make_grid(images, nrow=10)
 plt.figure(figsize=(15, 15))
 plt.imshow(np.transpose(grid, (1, 2, 0)))
 plt.show()
 
-for I in range(10):
-    plt.subplot(4,4,I+1)
+for I in range(16):
+    plt.subplot(4, 4, I+1)
     plt.imshow(images[I].squeeze())
 plt.show()

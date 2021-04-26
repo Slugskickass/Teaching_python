@@ -127,7 +127,7 @@ class RunManager():
         if self.epoch_count % discrete_n == 0:
             print(self.epoch_count, ' ', self.run_count)
 
-params = OrderedDict(lr=[.01], batch_size=[10], number_epocs=[100])
+params = OrderedDict(lr=[.01, 0.0001], batch_size=[100], number_epocs=[10])
 m = RunManager()
 
 for run in RunBuilder.get_runs(params):
@@ -148,6 +148,6 @@ for run in RunBuilder.get_runs(params):
             optimizer.step()  # Update Weights
             m.track_loss(loss, batch)
             m.track_num_correct(preds, labels)
-        m.inform(25)
+        m.inform(5)
         m.end_epoch()
     m.end_run()

@@ -19,7 +19,9 @@ class Network(nn.Module):
         # (2) hidden conv layer
         t = self.conv1(t)
         t = F.relu(t)
+        print(t.shape)
         t = F.max_pool2d(t, kernel_size=2, stride=2)
+        print(t.shape)
 
         return t
 
@@ -33,6 +35,6 @@ my_data = [[1, 2, 3, 1, 2, 3],
            [7, 8, 9, 7, 8, 9]]
 
 images = torch.tensor(my_data, dtype=torch.float32).unsqueeze(dim=0).unsqueeze(dim=0)
-print(images.shape)
+#print(images.shape)
 preds = network(images)
-print(preds.shape)
+#print(preds.shape)

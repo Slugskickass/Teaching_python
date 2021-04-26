@@ -22,6 +22,6 @@ my_data = [[1, 2, 3],
             [7, 8, 9]]
 
 images = torch.tensor(my_data)
-
+print(images)
 preds = network(images)
 print(preds)

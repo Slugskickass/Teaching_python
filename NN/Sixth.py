@@ -8,3 +8,5 @@ class Bunny: #class declaration
 
 dave = Bunny('Kitten')
 print(dave.name)
+dave.name = 'Rabbit'
+print(dave.name)

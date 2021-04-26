@@ -68,7 +68,7 @@ class Network(nn.Module):
 
         # (6) output layer
         t = self.out(t)
-        # t = F.softmax(t, dim=1)
+        #t = F.softmax(t, dim=1)
 
         return t
 
@@ -80,7 +80,7 @@ network = Network()
 
 batch = next(iter(train_loader))
 images, labels = batch
-number_run = 200
+number_run = 2000
 holdall = np.zeros(number_run)
 for I in range(number_run):
     preds = network(images)
@@ -93,3 +93,5 @@ for I in range(number_run):
 
 plt.plot(holdall)
 plt.show()
+print(preds.argmax(dim=1))
+print(labels)

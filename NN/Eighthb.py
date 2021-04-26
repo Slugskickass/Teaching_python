@@ -38,29 +38,42 @@ class Network(nn.Module):
 
     def forward(self, t):
         t = t
+        print(t.shape)
 
         # (2) hidden conv layer
         t = self.conv1(t)
+        # in 28 x 28
+        # out 24 x 24
         t = F.relu(t)
         t = F.max_pool2d(t, kernel_size=2, stride=2)
+        # out 12 * 12
+        print(t.shape)
 
         # (3) hidden conv layer
         t = self.conv2(t)
+        # in 12 * 12
+        # out 8 x 8
         t = F.relu(t)
         t = F.max_pool2d(t, kernel_size=2, stride=2)
+        # out 4 x 4
+        print(t.shape)
 
         # (4) hidden linear layer
         t = t.reshape(-1, 12 * 4 * 4)
+        print(t.shape)
         t = self.fc1(t)
         t = F.relu(t)
+        print(t.shape)
 
         # (5) hidden linear layer
         t = self.fc2(t)
         t = F.relu(t)
+        print(t.shape)
 
         # (6) output layer
         t = self.out(t)
-        # t = F.softmax(t, dim=1)
+        t = F.softmax(t, dim=1)
+        print(t.shape)
 
         return t
 

@@ -18,7 +18,7 @@ def savetiffs(file_name, data):
     images = []
     for I in range(np.shape(data)[2]):
         images.append(Image.fromarray(data[:, :, I]))
-        images[0].save(file_name, save_all=True, append_images=images[1:])
+    images[0].save(file_name, save_all=True, append_images=images[1:])
         #For a single image
         #images[0].save(file_name)
 
